@@ -14,7 +14,7 @@ def add_words(file_path):
 
         
 
-        with open('file_path', 'r+') as file:
+        with open(file_path, 'r+') as file:
             data = json.load(file)
             data[word] = translate
             file.seek(0)
@@ -23,7 +23,7 @@ def add_words(file_path):
 
 
 def extract_word(file_path):
-    with open('file_path') as file:
+    with open(file_path) as file:
         data = json.load(file)
 
     keys = list(data.keys())
