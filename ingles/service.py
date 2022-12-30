@@ -2,7 +2,7 @@ import json
 import numpy as np
 
 
-def add_words():
+def add_words(file_path):
     
     while True:
 
@@ -14,7 +14,7 @@ def add_words():
 
         
 
-        with open('vocabulary.json', 'r+') as file:
+        with open('file_path', 'r+') as file:
             data = json.load(file)
             data[word] = translate
             file.seek(0)
@@ -22,8 +22,8 @@ def add_words():
             file.truncate()
 
 
-def extract_word():
-    with open('vocabulary.json') as file:
+def extract_word(file_path):
+    with open('file_path') as file:
         data = json.load(file)
 
     keys = list(data.keys())
@@ -31,10 +31,10 @@ def extract_word():
 
     return (keys[index], data[keys[index]])
 
-def review_vocabulary():
+def review_vocabulary(file_path):
 
     while True:
-        spanish_word, english_word = extract_word()
+        spanish_word, english_word = extract_word(file_path)
         print(f'¿Cuál es la traducción de: {spanish_word} ?')
 
         translate = input()
