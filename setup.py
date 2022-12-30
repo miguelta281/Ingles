@@ -7,5 +7,4 @@ setup(
     author='Miguel Tarazona',
     author_email='miguelta281@gmail.com',
     packages=['ingles'],
-    install_requires=['json'],
 )
