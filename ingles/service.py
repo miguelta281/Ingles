@@ -33,15 +33,21 @@ def extract_word(file_path):
 
 def review_vocabulary(file_path):
 
+    total = 0
+    correct = 0
     while True:
         spanish_word, english_word = extract_word(file_path)
         print(f'¿Cuál es la traducción de: {spanish_word} ?')
 
         translate = input()
         if translate == '2145':
+            print(f'{correct} de {total}')
             break
 
         if translate == english_word:
+            correct += 1
             print('Correcto!')
         else:
             print(f'La forma correcta es: {english_word}')
+        
+        total += 1
